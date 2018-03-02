@@ -1,0 +1,9 @@
+C:\Users\Justin\Desktop\kinsmanRoping\ropingEntries\ropingEntries\bin\Debug\ropingEntries.exe.config
+C:\Users\Justin\Desktop\kinsmanRoping\ropingEntries\ropingEntries\obj\Debug\ropingEntries.csprojResolveAssemblyReference.cache
+C:\Users\Justin\Desktop\kinsmanRoping\ropingEntries\ropingEntries\obj\Debug\ropingEntries.Form1.resources
+C:\Users\Justin\Desktop\kinsmanRoping\ropingEntries\ropingEntries\obj\Debug\ropingEntries.Properties.Resources.resources
+C:\Users\Justin\Desktop\kinsmanRoping\ropingEntries\ropingEntries\obj\Debug\ropingEntries.csproj.GenerateResource.Cache
+C:\Users\Justin\Desktop\kinsmanRoping\ropingEntries\ropingEntries\bin\Debug\ropingEntries.exe
+C:\Users\Justin\Desktop\kinsmanRoping\ropingEntries\ropingEntries\bin\Debug\ropingEntries.pdb
+C:\Users\Justin\Desktop\kinsmanRoping\ropingEntries\ropingEntries\obj\Debug\ropingEntries.exe
+C:\Users\Justin\Desktop\kinsmanRoping\ropingEntries\ropingEntries\obj\Debug\ropingEntries.pdb
