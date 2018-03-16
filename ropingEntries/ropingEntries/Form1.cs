@@ -16,10 +16,15 @@ namespace ropingEntries
         List<string> headerEntries = new List<string>();
         List<string> heelerEntries = new List<string>();
         List<string> heelerEntriesTwo = new List<string>();
+        List<string> myTeams = new List<string>();
         static Random rnd = new Random();
         int headerCount = 0;
         int heelerCount = 0;
-        
+        int myCount = 0;
+        String firstRound;
+        String partnerOne;
+        String partnerTwo;
+
         public Form1()
         {
             headerEntries.Add("A");
@@ -58,8 +63,12 @@ namespace ropingEntries
             }
             using (StreamWriter writeRopers = new StreamWriter("myTeams.txt"))
             {
-                writeRopers.Write("Choose Partner Round");
-                writeRopers.Write("");
+                writeRopers.WriteLine("Choose Partner Round");
+                writeRopers.WriteLine("");
+            }
+            using (StreamWriter writerRopers = new StreamWriter("teams.txt"))
+            {
+                writerRopers.Write("");
             }
             /*
             using (StreamWriter writeRopers = new StreamWriter("teams.txt"))
@@ -153,36 +162,56 @@ namespace ropingEntries
             foreach (String i in headerEntries)
             {
                 int spotOne = rnd.Next(heelerEntries.Count);
-                var partnerOne = heelerEntries[spotOne];
+                partnerOne = heelerEntries[spotOne];
                 using (StreamWriter writeRopers = File.AppendText("myTeams.txt"))
                 {
                     writeRopers.WriteLine(" ");
                     writeRopers.WriteLine("Draw Round One");
                     writeRopers.WriteLine(i + " & " + partnerOne);
-                }               
-                String firstRound = (i + "&" + partnerOne);
-                heelerEntries.RemoveAt(spotOne);
-
-                int spotTwo = rnd.Next(heelerEntries.Count);
-                var partnerTwo = heelerEntriesTwo[spotTwo];
-                String secondRound = (i + " & " + partnerTwo);
-                while (firstRound == secondRound)
+                }
+                using (StreamWriter writeRopers = File.AppendText("teams.txt"))
                 {
+                    writeRopers.WriteLine(i + " & " + partnerOne);
+                }
+                firstRound = (i + "&" + partnerOne);
+                //MessageBox.Show("First Round" + firstRound);
+                heelerEntries.RemoveAt(spotOne);
+            }
+            //this has to be own loop!
+            foreach (String i in headerEntries)
+            {
+                int spotTwo = rnd.Next(heelerEntries.Count);
+                partnerTwo = heelerEntriesTwo[spotTwo];
+                String secondRound = (i + "&" + partnerTwo);
+                while (firstRound.Equals(secondRound))
+                {
+                    //MessageBox.Show("They are the same team" + firstRound.ToString() + "------" + secondRound);
+                    myCount = myCount + 1;
                     spotTwo = rnd.Next(heelerEntries.Count);
                     partnerTwo = heelerEntriesTwo[spotTwo];
-                    secondRound = (i + " & " + partnerTwo);
+                    secondRound = (i + "&" + partnerTwo);
+                    if (myCount == 5)
+                    {
+                        MessageBox.Show("Fucked up 5 times");
+                        break;
+                    }                    
                 }
+                //MessageBox.Show("Second Round: " + secondRound);
+                //MessageBox.Show(firstRound.ToString() + "------" + secondRound);
                 using (StreamWriter writeRopers = File.AppendText("myTeams.txt"))
                 {
-                    
+                    writeRopers.WriteLine(" ");
                     writeRopers.WriteLine("Draw Round Two");
                     writeRopers.WriteLine(i + " & " + partnerTwo);
-                    writeRopers.WriteLine(" ");
+                }
+                using (StreamWriter writeRopers = File.AppendText("teams.txt"))
+                {
+                    writeRopers.WriteLine(i + " & " + partnerTwo);
                 }
                 heelerEntriesTwo.RemoveAt(spotTwo);
-            }
+            }           
+            MessageBox.Show("Done! All teams are made!");        
         }
-
         private void csvExport_Click(object sender, EventArgs e)
         {
             string[] teams = File.ReadAllLines("teams.txt");
@@ -196,6 +225,14 @@ namespace ropingEntries
             }
 
             File.WriteAllText("myTeams.csv", builder.ToString());
+            MessageBox.Show("Files exported to CSV");
+            Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(Application.ExecutablePath);
+            this.Close();
         }
     }
 }

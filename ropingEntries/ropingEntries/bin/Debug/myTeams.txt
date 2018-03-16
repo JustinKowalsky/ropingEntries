@@ -1,36 +1,38 @@
-Choose Partner Round 
-Draw Round One
-A & G
-Draw Round Two
-A & K
- 
+Choose Partner Round
+
  
 Draw Round One
-B & L
-Draw Round Two
+A & H
+ 
+Draw Round One
 B & G
- 
  
 Draw Round One
 C & I
-Draw Round Two
-C & J
- 
  
 Draw Round One
+D & K
+ 
+Draw Round One
+E & L
+ 
+Draw Round One
+F & J
+ 
+Draw Round Two
+A & G
+ 
+Draw Round Two
+B & H
+ 
+Draw Round Two
+C & I
+ 
+Draw Round Two
 D & J
+ 
 Draw Round Two
-D & I
+E & K
  
- 
-Draw Round One
-E & H
-Draw Round Two
-E & H
- 
- 
-Draw Round One
-F & K
 Draw Round Two
 F & L
- 
