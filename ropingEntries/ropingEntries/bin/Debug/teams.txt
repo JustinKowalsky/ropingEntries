@@ -1,8 +1,8 @@
 A & H
-B & G
-C & I
-D & K
-E & L
+B & K
+C & G
+D & L
+E & I
 F & J
 A & G
 B & H
