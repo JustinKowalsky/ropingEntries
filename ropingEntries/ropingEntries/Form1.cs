@@ -22,6 +22,7 @@ namespace ropingEntries
         int heelerCount = 0;
         int myCount = 0;
         String firstRound;
+        String secondRound;
         String partnerOne;
         String partnerTwo;
 
@@ -182,10 +183,10 @@ namespace ropingEntries
             {
                 int spotTwo = rnd.Next(heelerEntries.Count);
                 partnerTwo = heelerEntriesTwo[spotTwo];
-                String secondRound = (i + "&" + partnerTwo);
+                secondRound = (i + "&" + partnerTwo);
                 while (firstRound.Equals(secondRound))
                 {
-                    //MessageBox.Show("They are the same team" + firstRound.ToString() + "------" + secondRound);
+                    MessageBox.Show("They are the same team" + firstRound.ToString() + "------" + secondRound);
                     myCount = myCount + 1;
                     spotTwo = rnd.Next(heelerEntries.Count);
                     partnerTwo = heelerEntriesTwo[spotTwo];
@@ -212,6 +213,7 @@ namespace ropingEntries
             }           
             MessageBox.Show("Done! All teams are made!");        
         }
+
         private void csvExport_Click(object sender, EventArgs e)
         {
             string[] teams = File.ReadAllLines("teams.txt");
